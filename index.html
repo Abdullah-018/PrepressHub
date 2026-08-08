@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="PrepressHub — Bangladesh garment accessories and prepress career platform">
+  <meta name="theme-color" content="#087d8b">
+  <title>PrepressHub</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%230aa7b5'/%3E%3Cpath d='M19 15h16c10 0 16 6 16 15s-6 15-16 15h-7v7h-9V15zm9 9v12h7c4 0 7-2 7-6s-3-6-7-6h-7z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script src="./config.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#app">মূল কনটেন্টে যান</a>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#home" aria-label="PrepressHub home"><span class="brand-mark">P</span><span>Prepress<span>Hub</span></span></a>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Menu" aria-controls="mobileNav" aria-expanded="false">☰</button>
+      <nav class="desktop-nav" id="desktopNav">
+        <a href="#home" data-i18n="home">হোম</a>
+        <a href="#companies" data-i18n="companies">কোম্পানি</a>
+        <a href="#professionals" data-i18n="professionals">প্রফেশনাল</a>
+        <a href="#jobs" data-i18n="jobs">চাকরি</a>
+        <a href="#advertise" data-i18n="advertise">বিজ্ঞাপন</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-button" id="languageButton" type="button">EN</button>
+        <div id="authActions"></div>
+      </div>
+    </div>
+    <nav class="mobile-nav container" id="mobileNav">
+      <a href="#home" data-i18n="home">হোম</a>
+      <a href="#companies" data-i18n="companies">কোম্পানি</a>
+      <a href="#professionals" data-i18n="professionals">প্রফেশনাল</a>
+      <a href="#jobs" data-i18n="jobs">চাকরি</a>
+      <a href="#advertise" data-i18n="advertise">বিজ্ঞাপন</a>
+    </nav>
+  </header>
+
+  <main id="app"><div class="page-loader"><span></span><p>PrepressHub loading…</p></div></main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a class="brand" href="#home"><span class="brand-mark">P</span><span>Prepress<span>Hub</span></span></a><p data-i18n="footerText">বাংলাদেশের garment accessories ও prepress professionals-এর career intelligence platform।</p></div>
+      <div><h4 data-i18n="platform">প্ল্যাটফর্ম</h4><a href="#companies" data-i18n="companies">কোম্পানি</a><a href="#professionals" data-i18n="professionals">প্রফেশনাল</a><a href="#jobs" data-i18n="jobs">চাকরি</a></div>
+      <div><h4 data-i18n="community">কমিউনিটি</h4><a href="#advertise" data-i18n="advertise">বিজ্ঞাপন</a><a href="#review-guidelines" data-i18n="reviewGuidelines">রিভিউ গাইডলাইন</a><a href="#privacy" data-i18n="privacy">প্রাইভেসি</a></div>
+      <div><h4 data-i18n="account">অ্যাকাউন্ট</h4><a href="#account" data-i18n="myProfile">আমার প্রোফাইল</a><a href="#admin" data-i18n="admin">অ্যাডমিন</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 PrepressHub</span><span>GitHub + Cloudflare Pages + Supabase</span></div>
+  </footer>
+
+  <dialog class="modal" id="authModal"><button class="modal-close" data-close-dialog type="button" aria-label="Close dialog">×</button><div id="authModalContent"></div></dialog>
+  <dialog class="modal wide" id="genericModal"><button class="modal-close" data-close-dialog type="button" aria-label="Close dialog">×</button><div id="genericModalContent"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>
