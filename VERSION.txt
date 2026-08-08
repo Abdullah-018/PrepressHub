@@ -1,6 +1,0 @@
-PrepressHub Production Starter
-Version: 1.0.0
-Architecture: Static HTML/CSS/JavaScript + Supabase + Cloudflare Pages
-Deployment: GitHub connected Cloudflare Pages
-Database/Auth/Storage: Supabase
-Demo data: None
