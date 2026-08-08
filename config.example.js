@@ -1,6 +1,0 @@
-window.PREPRESSHUB_CONFIG = {
-  SUPABASE_URL: "https://YOUR_PROJECT_REF.supabase.co",
-  SUPABASE_PUBLISHABLE_KEY: "YOUR_SUPABASE_PUBLISHABLE_KEY",
-  SITE_NAME: "PrepressHub",
-  ADMIN_EMAIL: "abdullahyz018@gmail.com"
-};
