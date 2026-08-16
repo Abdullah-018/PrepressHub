@@ -1,0 +1,12 @@
+PREPRESSHUB APPWRITE v2.0 — QUICK START
+
+1. Appwrite project তৈরি করুন এবং Web platform-এ localhost যোগ করুন।
+2. .env.example কপি করে .env বানিয়ে Endpoint, Project ID ও temporary API key দিন।
+3. node scripts/setup-appwrite.mjs চালান।
+4. functions/prepresshub-api Appwrite Function হিসেবে deploy করুন।
+5. config.js-এ Endpoint ও Project ID দিন; কোনো secret key দেবেন না।
+6. Start_Local_Appwrite.bat চালিয়ে http://localhost:8788 খুলুন।
+7. ADMIN_EMAIL-এর email দিয়ে signup করে admin dashboard test করুন।
+8. সব ঠিক হলে Appwrite Sites বা Cloudflare Pages-এ static folder deploy করুন।
+
+বিস্তারিত: APPWRITE_SETUP_BN.md

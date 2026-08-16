@@ -1,0 +1,5 @@
+PrepressHub v2.0 Appwrite Edition
+Architecture: Static HTML/CSS/JavaScript + Appwrite Auth/Database/Storage/Functions
+Frontend hosting: Appwrite Sites or Cloudflare Pages
+Backend: Appwrite
+Supabase runtime dependencies: none
