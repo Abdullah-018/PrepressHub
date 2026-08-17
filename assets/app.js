@@ -1,4 +1,4 @@
-import { supabase, config, isConfigured, publicFileUrl } from './appwrite.js';
+import { supabase, config, isConfigured, publicFileUrl } from './appwrite.js?v=2.0.6';
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -93,6 +93,19 @@ async function refreshAuth(){
     ]);
     state.privateProfile=privateProfile||null;
     state.profile=profile?{...profile,phone:privateProfile?.phone||'',cv_path:privateProfile?.cv_path||null}:null;
+    const configuredAdminEmail=String(config.ADMIN_EMAIL||'').trim().toLowerCase();
+    const authenticatedEmail=String(state.user.email||'').trim().toLowerCase();
+    if(configuredAdminEmail && authenticatedEmail===configuredAdminEmail){
+      state.profile={
+        ...(state.profile||{}),
+        id:state.user.id,
+        full_name:state.profile?.full_name||state.user.name||state.user.email,
+        phone:privateProfile?.phone||state.profile?.phone||'',
+        cv_path:privateProfile?.cv_path||state.profile?.cv_path||null,
+        role:'admin',
+        status:'approved'
+      };
+    }
     if(state.profile?.company_id){ const {data:company}=await supabase.from('companies').select('*').eq('id',state.profile.company_id).maybeSingle();state.company=company||null; }
   }
   renderAuthActions();

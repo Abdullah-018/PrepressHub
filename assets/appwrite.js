@@ -38,7 +38,8 @@ async function callApi(action, payload = {}) {
   try { body = JSON.parse(execution.responseBody || '{}'); }
   catch { throw new Error(execution.responseBody || 'Invalid response from Appwrite Function.'); }
   if ((execution.responseStatusCode && execution.responseStatusCode >= 400) || body.error) {
-    throw new Error(body.error || `Backend request failed (${execution.responseStatusCode}).`);
+    const runtimeError = String(execution.errors || '').trim();
+    throw new Error(body.error || runtimeError || `Backend request failed (${execution.responseStatusCode}).`);
   }
   return body.data;
 }
@@ -138,6 +139,10 @@ const auth = {
     try {
       await account.createEmailPasswordSession({ email, password });
       const user = normalizeUser(await account.get());
+      await callApi('bootstrapSignup', {
+        metadata: { full_name: user.name || email.split('@')[0] },
+        email: user.email || email
+      });
       return { data: { user, session: { user } }, error: null };
     } catch (error) { return { data: null, error: appwriteError(error) }; }
   },
