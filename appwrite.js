@@ -139,6 +139,10 @@ const auth = {
     try {
       await account.createEmailPasswordSession({ email, password });
       const user = normalizeUser(await account.get());
+      await callApi('bootstrapSignup', {
+        metadata: { full_name: user.name || email.split('@')[0] },
+        email: user.email || email
+      });
       return { data: { user, session: { user } }, error: null };
     } catch (error) { return { data: null, error: appwriteError(error) }; }
   },

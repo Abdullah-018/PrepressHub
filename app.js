@@ -1,4 +1,4 @@
-import { supabase, config, isConfigured, publicFileUrl } from './appwrite.js';
+import { supabase, config, isConfigured, publicFileUrl } from './appwrite.js?v=2.0.8';
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -22,7 +22,7 @@ const state = {
 
 const T = {
   bn: {
-    home:'হোম',companies:'কোম্পানি',professionals:'প্রফেশনাল',jobs:'চাকরি',advertise:'বিজ্ঞাপন',platform:'প্ল্যাটফর্ম',community:'কমিউনিটি',account:'অ্যাকাউন্ট',myProfile:'আমার প্রোফাইল',admin:'অ্যাডমিন',reviewGuidelines:'রিভিউ গাইডলাইন',privacy:'প্রাইভেসি',footerText:'বাংলাদেশের garment accessories ও prepress professionals-এর career intelligence platform।',
+    home:'হোম',companies:'কোম্পানি',professionals:'প্রফেশনাল',jobs:'চাকরি',advertise:'বিজ্ঞাপন',platform:'প্ল্যাটফর্ম',community:'কমিউনিটি',account:'অ্যাকাউন্ট',myProfile:'আমার প্রোফাইল',admin:'অ্যাডমিন',adminLogin:'অ্যাডমিন লগইন',adminAccess:'অ্যাডমিন প্রবেশ',adminSwitchNotice:'অ্যাডমিন হিসেবে প্রবেশ করলে বর্তমানে লগইন করা ইউজার বা কোম্পানি অ্যাকাউন্টটি লগআউট হবে।',adminVerificationFailed:'অ্যাডমিন অ্যাকাউন্ট যাচাই করা যায়নি।',adminEmailMissing:'config.js ফাইলে ADMIN_EMAIL দেওয়া নেই।',reviewGuidelines:'রিভিউ গাইডলাইন',privacy:'প্রাইভেসি',footerText:'বাংলাদেশের garment accessories ও prepress professionals-এর career intelligence platform।',
     login:'লগইন',signup:'সাইনআপ',logout:'লগআউট',loading:'লোড হচ্ছে…',save:'সেভ করুন',cancel:'বাতিল',search:'সার্চ করুন',view:'দেখুন',previewCv:'CV প্রিভিউ',noDownload:'CV শুধু প্রিভিউ করা যাবে। ডাউনলোড বাটন দেওয়া হয়নি।',pending:'পেন্ডিং',approved:'অনুমোদিত',rejected:'বাতিল',banned:'ব্যান',verifiedCompanyEmail:'ভেরিফায়েড কোম্পানি ইমেইল',
     heroEyebrow:'বাংলাদেশের প্রি-প্রেস ক্যারিয়ার নেটওয়ার্ক',heroTitle:'সঠিক কোম্পানি বেছে নিন, <em>বাস্তব কর্মপরিবেশ</em> আগেই জানুন',heroText:'কোম্পানি রিভিউ, টিম লিডার রেটিং, পেশাজীবী প্রোফাইল, চাকরি এবং শিল্পসংশ্লিষ্ট বিজ্ঞাপন—সব এক জায়গায়।',browseCompanies:'কোম্পানি দেখুন',createProfile:'প্রোফাইল তৈরি করুন',searchPlaceholder:'কোম্পানি বা প্রফেশনাল সার্চ করুন',approvedProfiles:'অনুমোদিত প্রোফাইল',approvedCompanies:'অনুমোদিত কোম্পানি',openJobs:'চলমান চাকরি',approvedReviews:'অনুমোদিত রিভিউ',
     featuredCompanies:'ফিচারড কোম্পানি',latestProfessionals:'নতুন প্রফেশনাল',latestJobs:'সাম্প্রতিক চাকরি',noData:'এখনো কোনো তথ্য নেই।',employeeCount:'নিবন্ধিত কর্মী',reviews:'রিভিউ',location:'লোকেশন',teamLead:'টিম লিডার',nightShift:'নাইট শিফট',salary:'সেলারি',designation:'ডেজিগনেশন',description:'বিস্তারিত',postJob:'চাকরি পোস্ট করুন',submitAd:'বিজ্ঞাপন জমা দিন',
@@ -35,7 +35,7 @@ const T = {
     profileSaved:'প্রোফাইল আপডেট হয়েছে।',companySaved:'কোম্পানি প্রোফাইল আপডেট হয়েছে।',fileUploadFailed:'ফাইল আপলোড ব্যর্থ হয়েছে।',loginRequired:'এই কাজের জন্য লগইন করুন।',approvedRequired:'এই কাজের জন্য approved account প্রয়োজন।',adminOnly:'শুধু অ্যাডমিন এই পেজ দেখতে পারবে।'
   },
   en: {
-    home:'Home',companies:'Companies',professionals:'Professionals',jobs:'Jobs',advertise:'Advertise',platform:'Platform',community:'Community',account:'Account',myProfile:'My profile',admin:'Admin',reviewGuidelines:'Review guidelines',privacy:'Privacy',footerText:'Bangladesh’s career intelligence platform for garment-accessories and prepress professionals.',
+    home:'Home',companies:'Companies',professionals:'Professionals',jobs:'Jobs',advertise:'Advertise',platform:'Platform',community:'Community',account:'Account',myProfile:'My profile',admin:'Admin',adminLogin:'Admin login',adminAccess:'Administrator access',adminSwitchNotice:'Signing in as administrator will log out the currently active user or company account.',adminVerificationFailed:'The administrator account could not be verified.',adminEmailMissing:'ADMIN_EMAIL is missing from config.js.',reviewGuidelines:'Review guidelines',privacy:'Privacy',footerText:'Bangladesh’s career intelligence platform for garment-accessories and prepress professionals.',
     login:'Login',signup:'Sign up',logout:'Logout',loading:'Loading…',save:'Save',cancel:'Cancel',search:'Search',view:'View',previewCv:'Preview CV',noDownload:'The CV is available for preview only. No download button is provided.',pending:'Pending',approved:'Approved',rejected:'Rejected',banned:'Banned',verifiedCompanyEmail:'Verified company email',
     heroEyebrow:'Bangladesh prepress career network',heroTitle:'Choose the right company and know the <em>real workplace</em> first',heroText:'Company reviews, named team-lead ratings, professional profiles, jobs and industry advertising in one platform.',browseCompanies:'Browse companies',createProfile:'Create profile',searchPlaceholder:'Search company or professional',approvedProfiles:'Approved profiles',approvedCompanies:'Approved companies',openJobs:'Open jobs',approvedReviews:'Approved reviews',
     featuredCompanies:'Featured companies',latestProfessionals:'New professionals',latestJobs:'Latest jobs',noData:'No information is available yet.',employeeCount:'Registered employees',reviews:'Reviews',location:'Location',teamLead:'Team lead',nightShift:'Night shift',salary:'Salary',designation:'Designation',description:'Description',postJob:'Post a job',submitAd:'Submit advertisement',
@@ -93,6 +93,19 @@ async function refreshAuth(){
     ]);
     state.privateProfile=privateProfile||null;
     state.profile=profile?{...profile,phone:privateProfile?.phone||'',cv_path:privateProfile?.cv_path||null}:null;
+    const configuredAdminEmail=String(config.ADMIN_EMAIL||'').trim().toLowerCase();
+    const authenticatedEmail=String(state.user.email||'').trim().toLowerCase();
+    if(configuredAdminEmail && authenticatedEmail===configuredAdminEmail){
+      state.profile={
+        ...(state.profile||{}),
+        id:state.user.id,
+        full_name:state.profile?.full_name||state.user.name||state.user.email,
+        phone:privateProfile?.phone||state.profile?.phone||'',
+        cv_path:privateProfile?.cv_path||state.profile?.cv_path||null,
+        role:'admin',
+        status:'approved'
+      };
+    }
     if(state.profile?.company_id){ const {data:company}=await supabase.from('companies').select('*').eq('id',state.profile.company_id).maybeSingle();state.company=company||null; }
   }
   renderAuthActions();
@@ -310,6 +323,10 @@ function openAuth(mode='login',type='professional'){
   openModal(authModal,authMarkup(mode,type));
   bindAuthForm();
 }
+function openAdminLogin(){
+  const adminEmail=String(config.ADMIN_EMAIL||'').trim().toLowerCase();
+  openModal(authModal,`<div class="modal-body admin-login-panel"><span class="eyebrow">${esc(t('adminAccess'))}</span><h2>${esc(t('adminLogin'))}</h2><div class="notice warning">${esc(t('adminSwitchNotice'))}</div><form id="adminLoginForm"><div class="form-grid"><label class="field full"><span>${esc(t('email'))}</span><input type="email" name="email" value="${esc(adminEmail)}" readonly required></label><label class="field full"><span>${esc(t('password'))}</span><input type="password" name="password" required minlength="8" autocomplete="current-password"></label></div><div class="form-actions"><button class="button primary full" type="submit">${esc(t('adminLogin'))}</button></div></form></div>`);
+}
 function authMarkup(mode,type){
   return `<div class="modal-body"><span class="eyebrow">Secure access</span><h2>${esc(mode==='login'?t('login'):t('signup'))}</h2><div class="auth-tabs"><button class="${mode==='login'?'active':''}" data-auth-tab="login">${esc(t('login'))}</button><button class="${mode==='signup'?'active':''}" data-auth-tab="signup">${esc(t('signup'))}</button></div>${mode==='login'?loginForm():signupForms(type)}</div>`;
 }
@@ -349,6 +366,17 @@ async function signupCompany(form){
 }
 async function login(form){
   const fd=new FormData(form);const {error}=await supabase.auth.signInWithPassword({email:fd.get('email').trim(),password:fd.get('password')});if(error)throw error;await refreshAuth();closeModal(authModal);showToast(t('success'));location.hash=state.profile?.role==='admin'?'#admin':'#account';
+}
+async function adminLogin(form){
+  const adminEmail=String(config.ADMIN_EMAIL||'').trim().toLowerCase();
+  if(!adminEmail)throw new Error(t('adminEmailMissing'));
+  if(state.session){const {error:signOutError}=await supabase.auth.signOut();if(signOutError)throw signOutError;await refreshAuth();}
+  const fd=new FormData(form),{error}=await supabase.auth.signInWithPassword({email:adminEmail,password:fd.get('password')});if(error)throw error;
+  await refreshAuth();
+  if(String(state.user?.email||'').trim().toLowerCase()!==adminEmail||state.profile?.role!=='admin'){
+    await supabase.auth.signOut();await refreshAuth();throw new Error(t('adminVerificationFailed'));
+  }
+  closeModal(authModal);showToast(t('success'));location.hash='#admin';
 }
 
 async function uploadPendingFile(user,email){
@@ -439,6 +467,7 @@ async function adminModerate(kind,id,status){await rpc('admin_moderate_content',
 
 async function handleClick(event){
   const target=event.target.closest('button,a');if(!target)return;
+  if(target.matches('[data-admin-login]')){event.preventDefault();openAdminLogin();return;}
   if(target.matches('[data-auth]')){event.preventDefault();openAuth(target.dataset.auth);return;}
   if(target.matches('[data-logout]')){await supabase.auth.signOut();await refreshAuth();location.hash='#home';showToast(t('success'));return;}
   if(target.matches('[data-close-dialog]')){closeModal(target.closest('dialog'));return;}
@@ -465,6 +494,7 @@ async function handleSubmit(event){
   event.preventDefault();const form=event.target;
   try{
     if(form.id==='globalSearch'){location.hash=`#companies?q=${encodeURIComponent(new FormData(form).get('q'))}`;return;}
+    if(form.id==='adminLoginForm'){await adminLogin(form);return;}
     if(form.id==='loginForm'){await login(form);return;}
     if(form.id==='professionalSignupForm'){await signupProfessional(form);return;}
     if(form.id==='companySignupForm'){await signupCompany(form);return;}
