@@ -160,6 +160,7 @@ const storageFacade = {
         try {
           const user = normalizeUser(await account.get());
           const permissions = [
+            ...(namespace === 'avatars' ? [sdk.Permission.read(sdk.Role.any())] : []),
             sdk.Permission.read(sdk.Role.user(user.id)),
             sdk.Permission.update(sdk.Role.user(user.id)),
             sdk.Permission.delete(sdk.Role.user(user.id))
@@ -173,6 +174,15 @@ const storageFacade = {
           await callApi('registerFile', { namespace, path, fileId: result.$id });
           return { data: { ...result, path }, error: null };
         } catch (error) { return { data: null, error: appwriteError(error) }; }
+      },
+      async remove(path) {
+        try {
+          await storage.deleteFile({ bucketId: config.APPWRITE_BUCKET_ID || 'prepresshub-files', fileId: logicalFileId(path) });
+          return { error: null };
+        } catch (error) {
+          if (error?.code === 404) return { error: null };
+          return { error: appwriteError(error) };
+        }
       },
       async createSignedUrl(path, expiresIn = 120) {
         try {
