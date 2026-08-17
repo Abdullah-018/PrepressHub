@@ -1,4 +1,4 @@
-import { supabase, config, isConfigured, publicFileUrl } from './appwrite.js?v=2.0.6';
+import { supabase, config, isConfigured, publicFileUrl } from './appwrite.js?v=2.0.7';
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
