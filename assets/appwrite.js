@@ -202,6 +202,10 @@ export const supabase = isConfigured ? {
     try { return { data: await callApi('guestReview', payload), error: null }; }
     catch (error) { return { data: null, error: appwriteError(error) }; }
   },
+  async guestLogin(payload) {
+    try { return { data: await callApi('guestLogin', payload), error: null }; }
+    catch (error) { return { data: null, error: appwriteError(error) }; }
+  },
   async rpc(name, args = {}) {
     try { return { data: await callApi('rpc', { name, args }), error: null }; }
     catch (error) { return { data: null, error: appwriteError(error) }; }
